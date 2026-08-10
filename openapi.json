@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "IDRX money movement (demo)", "version": "1.0.0" },
+  "paths": {
+    "/v1/transfers": {
+      "post": {
+        "summary": "Move IDRX between accounts",
+        "parameters": [
+          { "name": "Idempotency-Key", "in": "header", "required": true,
+            "description": "Unique per attempt, so a retry cannot move money twice.",
+            "schema": { "type": "string" } }
+        ],
+        "responses": { "202": { "description": "Accepted" } }
+      }
+    },
+    "/v1/redemptions": {
+      "post": {
+        "summary": "Redeem IDRX for rupiah",
+        "parameters": [
+          { "name": "Idempotency-Key", "in": "header", "required": true,
+            "description": "Unique per attempt, so a retry cannot redeem twice.",
+            "schema": { "type": "string" } }
+        ],
+        "responses": { "202": { "description": "Accepted" } }
+      }
+    }
+  }
+}
