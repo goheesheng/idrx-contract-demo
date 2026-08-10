@@ -1,33 +1,98 @@
 {
   "openapi": "3.0.3",
-  "info": { "title": "IDRX money movement (demo)", "version": "1.1.0" },
+  "info": {
+    "title": "IDRX money movement (demo)",
+    "version": "1.2.0"
+  },
   "paths": {
     "/v1/transfers": {
       "post": {
         "summary": "Move IDRX between accounts",
         "parameters": [
-          { "name": "Idempotency-Key", "in": "header", "required": true,
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
             "description": "Unique per attempt, so a retry cannot move money twice.",
-            "schema": { "type": "string" } },
-          { "name": "X-IDRX-Api-Version", "in": "header", "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-IDRX-Api-Version",
+            "in": "header",
+            "required": true,
             "description": "Pins the contract version this caller was written against. Constant per release: 2026-08-01.",
-            "schema": { "type": "string", "enum": ["2026-08-01"] } }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2026-08-01"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Product",
+            "in": "header",
+            "required": true,
+            "description": "Names the product line this call belongs to. Constant: money-movement.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "money-movement"
+              ]
+            }
+          }
         ],
-        "responses": { "202": { "description": "Accepted" } }
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
       }
     },
     "/v1/redemptions": {
       "post": {
         "summary": "Redeem IDRX for rupiah",
         "parameters": [
-          { "name": "Idempotency-Key", "in": "header", "required": true,
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
             "description": "Unique per attempt, so a retry cannot redeem twice.",
-            "schema": { "type": "string" } },
-          { "name": "X-IDRX-Api-Version", "in": "header", "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-IDRX-Api-Version",
+            "in": "header",
+            "required": true,
             "description": "Pins the contract version this caller was written against. Constant per release: 2026-08-01.",
-            "schema": { "type": "string", "enum": ["2026-08-01"] } }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "2026-08-01"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Product",
+            "in": "header",
+            "required": true,
+            "description": "Names the product line this call belongs to. Constant: money-movement.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "money-movement"
+              ]
+            }
+          }
         ],
-        "responses": { "202": { "description": "Accepted" } }
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
       }
     }
   }
