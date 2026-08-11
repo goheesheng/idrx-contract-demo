@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "IDRX money movement (demo)",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "paths": {
     "/v1/transfers": {
@@ -39,6 +39,18 @@
               "type": "string",
               "enum": [
                 "money-movement"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Channel",
+            "in": "header",
+            "required": true,
+            "description": "Names the integration channel. Constant: partner-api.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "partner-api"
               ]
             }
           }
@@ -84,6 +96,18 @@
               "type": "string",
               "enum": [
                 "money-movement"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Channel",
+            "in": "header",
+            "required": true,
+            "description": "Names the integration channel. Constant: partner-api.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "partner-api"
               ]
             }
           }
