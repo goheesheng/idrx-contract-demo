@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "IDRX money movement (demo)",
-    "version": "1.4.0"
+    "version": "1.5.0"
   },
   "paths": {
     "/v1/transfers": {
@@ -63,6 +63,18 @@
               "type": "string",
               "enum": [
                 "primary"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Region",
+            "in": "header",
+            "required": true,
+            "description": "Names the region. Constant: id.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "id"
               ]
             }
           }
@@ -132,6 +144,18 @@
               "type": "string",
               "enum": [
                 "primary"
+              ]
+            }
+          },
+          {
+            "name": "X-IDRX-Region",
+            "in": "header",
+            "required": true,
+            "description": "Names the region. Constant: id.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "id"
               ]
             }
           }
